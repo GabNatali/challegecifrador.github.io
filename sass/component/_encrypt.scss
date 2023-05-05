@@ -1,0 +1,102 @@
+
+button {
+    width: 100%;
+    padding: 24px;
+    font-size: 18px;
+    border-radius: 24px;
+    margin: 24px auto;
+    color: $BtnSecudary;
+    border: 1px solid $BtnSecudary;
+    cursor: pointer;
+    transition: all .5s;
+
+    @include breakpoint($md){
+        width: 48%;
+        display: inline-block;
+    }
+
+    @include breakpoint($xl){
+        width: 40%;
+        
+    }
+}
+
+button:hover {
+    transform: translate(0, -4px);
+    font-weight: 700;
+}
+
+
+.encrypt {
+
+    @include breakpoint($xl){
+        flex: 3;
+    }
+
+    &__textInput {
+        height: 250px;
+        width: 100%;
+        font-family: cursive;
+        color: $Text;
+        font-weight: 400;
+        resize: none;
+
+        @include breakpoint($md){
+            height: 300px;
+        
+        }
+
+        @include breakpoint($xl){
+            height: 640px;
+            padding-top: 70px;
+            width: 82%;
+            font-size: 32px;
+            font-weight: 500;
+        }
+    } 
+    ::placeholder {
+            color: $Text;
+            font-size: 32px;
+            font-weight: 500;
+
+    }
+
+    &__info {
+        display: flex;
+        gap:.5rem;
+        color: $Span;
+        font-size: 12px;
+
+        .info__img {
+            object-fit: scale-down;
+        }
+    }
+
+    &__btn-primary {
+        background-color: $BtnPrimary;
+        color: $white;
+        border: none;
+
+        @include breakpoint($md){
+            margin-right: 15px;
+        }
+    }
+
+    
+    &__btn-secundary {
+        margin-bottom: 50px;
+    } 
+
+    &__btn-primary:hover {
+        background-color: $hprimary;
+    }
+
+    &__btn-secundary:hover {
+        background-color: $BtnSecudary;
+        color: white;
+        border: none;
+    }
+
+}
+
+

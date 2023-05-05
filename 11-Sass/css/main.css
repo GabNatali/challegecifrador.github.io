@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reset link para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+  outline: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(Helvetica, Arial, sans-serif);
+  color: var(--negro);
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F3F5FC;
+}
+
+section {
+  padding: 10%;
+}
+
+.header-container {
+  height: 100px;
+}
+.header-container img {
+  object-fit: scale-down;
+  max-height: 100%;
+  object-position: left;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 24px;
+  font-size: 18px;
+  border-radius: 24px;
+  border: 1px solid #0A3871;
+  margin: 24px 0;
+  color: #0A3871;
+}
+
+.encrypt__textInput {
+  height: 300px;
+  width: 100%;
+  font-family: cursive;
+  color: #0A3871;
+}
+.encrypt ::placeholder {
+  color: #0A3871;
+  font-size: 32px;
+}
+.encrypt__info {
+  display: flex;
+  gap: 0.5rem;
+  color: #495057;
+  font-size: 12px;
+}
+.encrypt__info .info__img {
+  object-fit: scale-down;
+}
+.encrypt__btn-primary {
+  background-color: #0A3871;
+  color: white;
+}
+
+.decrypt {
+  border-radius: 32px;
+  background-color: white;
+  padding: 32px;
+  text-align: center;
+  line-height: 1.5rem;
+  box-shadow: -2px 20px 40px 20px rgba(229, 229, 229, 0.75);
+  -webkit-box-shadow: -2px 14px 40px 5px rgba(229, 229, 229, 0.75);
+  -moz-box-shadow: -2px 14px 40px 5px rgba(229, 229, 229, 0.75);
+}
+.decrypt img {
+  display: none;
+}
+.decrypt__result {
+  font-size: 24px;
+  font-weight: 600;
+  color: #343A40;
+  margin: 10px 0;
+}
+.decrypt__message {
+  font-size: 15px;
+  color: #495057;
+  letter-spacing: 0.1rem;
+}

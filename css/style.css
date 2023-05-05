@@ -1,0 +1,313 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939; }
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec; } }
+
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important; } }
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline; }
+
+*::before,
+*::after {
+  display: block; }
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center; }
+
+/* Reset link para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit; }
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline; }
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none; }
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth; }
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit; }
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+  outline: none; }
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor; }
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(Helvetica, Arial, sans-serif);
+  color: var(--negro);
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background-color: #F9F9F9;
+  font-family: 'Inter', sans-serif;
+  position: relative; }
+
+.b-tooltip {
+  background-color: #DEDEDE;
+  transition: background-color 2s; }
+
+section {
+  padding: 5% 10%; }
+  @media (min-width: 1440px) {
+    section {
+      display: flex;
+      height: 750px;
+      padding: 0% 5% 0 15%; } }
+
+.header-container {
+  height: 100px; }
+  .header-container img {
+    object-fit: scale-down;
+    max-height: 100%;
+    object-position: left;
+    width: 100%; }
+
+button {
+  width: 100%;
+  padding: 24px;
+  font-size: 18px;
+  border-radius: 24px;
+  margin: 24px auto;
+  color: #F24B88;
+  border: 1px solid #F24B88;
+  cursor: pointer;
+  transition: all .5s; }
+  @media (min-width: 768px) {
+    button {
+      width: 48%;
+      display: inline-block; } }
+  @media (min-width: 1440px) {
+    button {
+      width: 40%; } }
+
+button:hover {
+  transform: translate(0, -4px);
+  font-weight: 700; }
+
+@media (min-width: 1440px) {
+  .encrypt {
+    flex: 3; } }
+
+.encrypt__textInput {
+  height: 250px;
+  width: 100%;
+  font-family: cursive;
+  color: #020910;
+  font-weight: 400;
+  resize: none; }
+  @media (min-width: 768px) {
+    .encrypt__textInput {
+      height: 300px; } }
+  @media (min-width: 1440px) {
+    .encrypt__textInput {
+      height: 640px;
+      padding-top: 70px;
+      width: 82%;
+      font-size: 32px;
+      font-weight: 500; } }
+
+.encrypt ::placeholder {
+  color: #020910;
+  font-size: 32px;
+  font-weight: 500; }
+
+.encrypt__info {
+  display: flex;
+  gap: .5rem;
+  color: #1B2605;
+  font-size: 12px; }
+  .encrypt__info .info__img {
+    object-fit: scale-down; }
+
+.encrypt__btn-primary {
+  background-color: #92BF37;
+  color: #ffff;
+  border: none; }
+  @media (min-width: 768px) {
+    .encrypt__btn-primary {
+      margin-right: 15px; } }
+
+.encrypt__btn-secundary {
+  margin-bottom: 50px; }
+
+.encrypt__btn-primary:hover {
+  background-color: #779C2D; }
+
+.encrypt__btn-secundary:hover {
+  background-color: #F24B88;
+  color: white;
+  border: none; }
+
+.decrypt {
+  border-radius: 32px;
+  background-color: #ffff;
+  padding: 32px;
+  text-align: center;
+  line-height: 1.5rem;
+  align-items: center;
+  box-shadow: -2px 20px 40px 20px rgba(229, 229, 229, 0.75);
+  -webkit-box-shadow: -2px 14px 40px 5px rgba(229, 229, 229, 0.75);
+  -moz-box-shadow: -2px 14px 40px 5px rgba(229, 229, 229, 0.75); }
+  @media (min-width: 1440px) {
+    .decrypt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px; } }
+  .decrypt__img {
+    display: none; }
+    @media (min-width: 1440px) {
+      .decrypt__img {
+        display: block; } }
+  .decrypt__img--remove {
+    display: none;
+    position: hidden; }
+  .decrypt__result {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #020910;
+    margin: 10px 0;
+    font-weight: 700;
+    text-align: center;
+    resize: none; }
+  .decrypt__result--text {
+    height: 150px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    resize: none; }
+    @media (min-width: 1440px) {
+      .decrypt__result--text {
+        height: 500px;
+        resize: none; } }
+  .decrypt__message {
+    font-size: 15px;
+    color: #020910;
+    font-weight: 300; }
+  .decrypt__message--remove {
+    display: none; }
+  .decrypt__btn-copiar {
+    color: #ffff;
+    background-color: #362D99;
+    border: none;
+    width: 90%; }
+
+.tooltip {
+  display: none; }
+  .tooltip--block {
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    top: 25px;
+    text-align: center; }
+  .tooltip__span {
+    background-color: red;
+    border-radius: 10px;
+    color: aliceblue;
+    padding: 15px 30px;
+    font-size: 14px; }

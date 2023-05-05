@@ -1,0 +1,77 @@
+.decrypt {
+    border-radius: 32px;
+    background-color: $white;
+    padding: 32px;
+    text-align: center;
+    line-height: 1.5rem;
+    align-items: center;
+
+    box-shadow: -2px 20px 40px 20px rgba(229,229,229,0.75);
+    -webkit-box-shadow: -2px 14px 40px 5px rgba(229,229,229,0.75);
+    -moz-box-shadow: -2px 14px 40px 5px rgba(229,229,229,0.75);
+
+    @include breakpoint($xl){
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    
+    }
+    &__img {
+        display: none;
+        @include breakpoint($xl){
+            display: block;
+        }
+    }
+
+    &__img--remove{
+            display: none;
+            position: hidden;
+    }
+        
+    
+
+    &__result {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 600;
+        color: $Text;
+        margin: 10px 0;
+        font-weight: 700;
+        text-align: center;
+        resize: none;
+    }
+
+    &__result--text {
+        height: 150px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+        resize: none;
+        @include breakpoint($xl){
+            height: 500px;
+            resize: none;
+        }
+    }
+
+
+    &__message {
+        font-size: 15px;
+        color: $Text;
+        font-weight: 300;
+    }
+
+    &__message--remove {
+        display: none;
+    }
+
+    &__btn-copiar {
+        color: $white;
+        background-color: $btngeneral;
+        border: none;
+        width: 90%;
+        }
+}
+
