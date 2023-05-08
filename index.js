@@ -13,7 +13,7 @@ const body = document.getElementsByTagName('body');
 console.log(body)
 
 var text;
-const regex = /[a-z\ñ\s]+$/g;
+const regex = /([A-ZÁ-Ú])|([á-ú])|([0-9])|([!-/])|([:-@])|([\[-\\'])|([{-¥])/g;
 
 
 
@@ -53,11 +53,7 @@ function copy() {
 
 function exec(text,obj) {
     if(regex.test(text)){
-        const result = encrypt(text,obj);
-        mensaje.textContent = result
-        changeClass() 
-
-    } else {
+        console.log('h',regex.test(text) )
         setTimeout(()=>{
             tooltip.classList.remove('tooltip');
             tooltip.classList.add('tooltip--block');
@@ -68,6 +64,13 @@ function exec(text,obj) {
             tooltip.classList.add('tooltip');
             body[0].classList.remove('b-tooltip')
         }, 2000);
+    } 
+
+    if(regex.test(text)===false){
+        console.log('here')
+        const result = encrypt(text,obj);
+        mensaje.textContent = result
+        changeClass() 
     }
 }
 
