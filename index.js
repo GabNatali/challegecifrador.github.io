@@ -52,7 +52,11 @@ function copy() {
 }
 
 function exec(text,obj) {
-    if(regex.test(text)){
+    if(regex.test(text)===false){
+        const result = encrypt(text,obj);
+        mensaje.textContent = result
+        changeClass() 
+    } else {
         console.log('h',regex.test(text) )
         setTimeout(()=>{
             tooltip.classList.remove('tooltip');
@@ -64,15 +68,9 @@ function exec(text,obj) {
             tooltip.classList.add('tooltip');
             body[0].classList.remove('b-tooltip')
         }, 2000);
-    } 
-
-    if(regex.test(text)===false){
-        console.log('here')
-        const result = encrypt(text,obj);
-        mensaje.textContent = result
-        changeClass() 
     }
-}
+    }
+
 
 
 
